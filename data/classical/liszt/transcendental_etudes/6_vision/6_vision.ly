@@ -59,7 +59,7 @@ motifAccent = \markup \fill-line {
   \hspace #1
   \column {
     \score {
-      \motifMultiple { \time 1/4 } "a3' " "Chord Accent" 0/2
+      \motifMultiple { \time 1/4 } "a3' " "Chord Accent" 3/6
       {r8 \tuplet 6/4 { g'''32 c''' g'' e'' c'' g' }}
       {\tuplet 6/4 { g c' e' g' c'' e'' } <e''' g''>8 }
       \scoreLayout
