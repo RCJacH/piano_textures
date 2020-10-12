@@ -47,10 +47,10 @@ Different voices are colored differently, with red being the melody, blue the ba
 
 Two hand playing the identical motif or variations are considered as two voices:
 
-![Melody and motif on right hand, variation of motif on left hand](./data\classical\liszt\transcendental_etudes\12_chasse_neige\12_chasse_neige-page4.png?raw=true)
+![Melody and motif on right hand, variation of motif on left hand](./data/classical/liszt/transcendental_etudes/12_chasse_neige/12_chasse_neige-page4.png?raw=true)
 
 However, them contributing to a single motif are considered as one voice.
 
-![Melody on right hand, bass on left, with both hands splitting the middle voice](./data\classical\liszt\transcendental_etudes\12_chasse_neige\12_chasse_neige-page6.png?raw=true)
+![Melody on right hand, bass on left, with both hands splitting the middle voice](./data/classical/liszt/transcendental_etudes/12_chasse_neige/12_chasse_neige-page6.png?raw=true)
 
 Sometimes, I may include some observations of things to consider as comments below the staff.
