@@ -4,7 +4,7 @@
 \include "header.ily"
 
 
-motifa = \markup \fill-line {
+motifa = \markup \justify-line {
   \column {
     \score {
       \motifSingle { \time 1/8 } "a " "Original" "6" { \repeat unfold 4 { c'64 e' }}
@@ -41,8 +41,8 @@ motifa = \markup \fill-line {
 }
 
 
-motifaTwoHanded = \markup \fill-line {
-  \hspace #1
+motifaTwoHanded = \markup \justify-line {
+  \null
   \column {
     \score {
       \motifPiano { \time 1/8 } "a'' " "Split voicing" "6" { \stemUp \repeat unfold 4 { \l <g c'>64 \u <e' g'> }} { s8 }
@@ -55,7 +55,7 @@ motifaTwoHanded = \markup \fill-line {
       \scoreLayout
     }
   }
-  \hspace #1
+  \null
 }
 
 
@@ -65,8 +65,8 @@ motifbSetting = {
 }
 
 
-motifb = \markup \fill-line {
-  \hspace #1
+motifb = \markup \justify-line {
+  \null
   \column {
     \score {
       \motifMultiple \motifbSetting "b " "Original" 5/2 { r16 <g e'> r <g e'> } { c,8 c, }
@@ -85,7 +85,7 @@ motifb = \markup \fill-line {
       \scoreLayout
     }
   }
-  \hspace #1
+  \null
 }
 
 
@@ -204,7 +204,7 @@ combinationThreeb = \markup {
 
 combinationThreec = \markup {
   \score {
-    \combinationPiano 10 { \time 2/8 } "Melody + a''|a1'' + Bass "
+    \combinationPiano 10 { \time 2/8 } "Melody + a'' + Bass "
     { \key bes \minor }
     \voices 6, 1<<
       {
@@ -224,7 +224,7 @@ combinationThreec = \markup {
 
 combinationThreed = \markup {
   \score {
-    \combinationPiano 25 { \time 2/8 } ""
+    \combinationPiano 25 { \time 2/8 } "Melody + a1'' + Bass "
     { \key e \major }
     \voices 6, 1 <<
       {
@@ -390,18 +390,16 @@ combinationFourd = \markup {
   \header {
     piece = \markup { \bold \large "2-part Combinations" }
   }
-  \markup \center-column {
-    \column {
-      \combinationTwoa
-      \vspace #1
-      \combinationTwob
-      \vspace #0.5
-      "Use arpeggio to extend range."
-      \vspace #1
-      \combinationTwoc
-      \vspace #0.5
-      "Tuplets with optional doublings is also possible."
-    }
+  \markup \left-column {
+    \combinationTwoa
+    \vspace #1
+    \combinationTwob
+    \vspace #0.5
+    "Use arpeggio to extend range."
+    \vspace #1
+    \combinationTwoc
+    \vspace #0.5
+    "Tuplets with optional doublings is also possible."
   }
 }
 
@@ -411,24 +409,29 @@ combinationFourd = \markup {
   \header {
     piece = \markup { \bold \large "3-part Combinations" }
   }
-  \markup \center-column {
-    \column {
-      \combinationThreea
-      \vspace #0.5
-      "1. LH and RH top note doubles melody."
-      "2. Inverted tremolo on the other hand with thirds as main interval in between."
-      \vspace #1
-      \combinationThreeb
-      \vspace #0.5
-      "1. Omit first note of tremolo to extend reach."
-      "2. Middle voices double in octave."
-      \vspace #1
-      \combinationThreec
-      \vspace #0.8
-      "Use two-handed tremolo for louder passages."
-      \combinationThreed
-      \vspace #0.5
-      "Thicken voicing for climax."
+  \markup \left-column {
+    \combinationThreea
+    \vspace #0.5
+    "1. LH and RH top note doubles melody."
+    "2. Inverted tremolo on the other hand with thirds as main interval in between."
+    \vspace #1
+    \combinationThreeb
+    \vspace #0.5
+    "1. Omit first note of tremolo to extend reach."
+    "2. Middle voices double in octave."
+    \vspace #1
+    \line {
+      \column {
+        \combinationThreec
+        \vspace #0.8
+        "Use two-handed tremolo for louder passages."
+      }
+      \hspace #10
+      \column {
+        \combinationThreed
+        \vspace #0.5
+        "Thicken voicing for climax."
+      }
     }
   }
 }
@@ -439,24 +442,22 @@ combinationFourd = \markup {
   \header {
     piece = \markup { \bold \large "4-part Combinations" }
   }
-  \markup \center-column {
-    \column {
-      \combinationFoura
-      \vspace #0.5
-      "Layer tremolos for wider but not necessarily louder passages."
-      \vspace #1
-      \combinationFourb
-      \vspace #0.5
-      "Combinable with other articulations."
-      \vspace #1
-      \combinationFourc
-      \vspace #0.5
-      "Layer tremolo in different tuplets for a more complex texture."
-      \vspace #1
-      \combinationFourd
-      \vspace #0.5
-      "Tremolo can also alternate between bass and octave with chord tones in between."
-    }
+  \markup \left-column {
+    \combinationFoura
+    \vspace #0.5
+    "Layer tremolos for wider but not necessarily louder passages."
+    \vspace #1
+    \combinationFourb
+    \vspace #0.5
+    "Combinable with other articulations."
+    \vspace #1
+    \combinationFourc
+    \vspace #0.5
+    "Layer tremolo in different tuplets for a more complex texture."
+    \vspace #1
+    \combinationFourd
+    \vspace #0.5
+    "Tremolo can also alternate between bass and octave with chord tones in between."
   }
 }
 

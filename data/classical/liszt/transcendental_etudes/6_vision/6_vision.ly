@@ -4,7 +4,7 @@
 \include "header.ily"
 
 
-motifOriginal = \markup \fill-line {
+motifOriginal = \markup \justify-line {
   \column {
     \score {
       \motifSingle { \time 1/8} "a " "Original" "6" { \tuplet 6/4 { r32 e'32 c'' g'' c'' e' }}
@@ -25,8 +25,8 @@ motifOriginal = \markup \fill-line {
   }
 }
 
-motifLonger = \markup \fill-line {
-  \hspace #1
+motifLonger = \markup \justify-line {
+  \null
   \column {
     \score {
       \motifSingle { \time 1/4 } "a2 " "Quarter Arpeggio" "6" {
@@ -35,7 +35,7 @@ motifLonger = \markup \fill-line {
       \scoreLayout
     }
   }
-  \hspace #1
+  \null
   \column {
     \score {
       \motifSingle { \time 1/4 } "a2' " "Quarter Skewed" "6" \relative c'' {
@@ -44,11 +44,11 @@ motifLonger = \markup \fill-line {
       \scoreLayout
     }
   }
-  \hspace #1
+  \null
 }
 
-motifAccent = \markup \fill-line {
-  \hspace #1
+motifAccent = \markup \justify-line {
+  \null
   \column {
     \score {
       \motifSingle { \time 1/4 } "a3 " "Accented Note" "6"
@@ -56,7 +56,7 @@ motifAccent = \markup \fill-line {
       \scoreLayout
     }
   }
-  \hspace #1
+  \null
   \column {
     \score {
       \motifMultiple { \time 1/4 } "a3' " "Chord Accent" 3/6
@@ -65,10 +65,10 @@ motifAccent = \markup \fill-line {
       \scoreLayout
     }
   }
-  \hspace #1
+  \null
 }
 
-motifChords = \markup \fill-line {
+motifChords = \markup \justify-line {
   \column {
     \score {
       \motifSingle { \time 1/4 } "a4 " "Diads" "6" \relative c {
@@ -96,7 +96,7 @@ motifChords = \markup \fill-line {
 }
 
 
-combinationThreea = \markup \column {
+combinationThreea = \markup {
   \score {
     \combinationPiano 1 { \time 3/4 } "Melody + a + Bass "
     { \key g \minor }
@@ -120,7 +120,7 @@ combinationThreea = \markup \column {
 }
 
 
-combinationThreeb = \markup \column {
+combinationThreeb = \markup {
   \score {
     \combinationPiano 8 { \time 2/4 } "Melody + a1 + Bass "
     { \key g \minor }
@@ -134,7 +134,7 @@ combinationThreeb = \markup \column {
 }
 
 
-combinationThreec = \markup \column {
+combinationThreec = \markup {
   \score {
     \combinationPiano 38 { \time 2/4 } "Melody + a3' + Chord "
     { \key g \major }
@@ -160,7 +160,7 @@ combinationThreec = \markup \column {
 }
 
 
-combinationThreed = \markup \column {
+combinationThreed = \markup {
   \score {
     \combinationPiano 40 { \time 2/4 } "Melody + a4 + Tremolo "
     { \key g \major }
@@ -188,7 +188,7 @@ combinationThreed = \markup \column {
 }
 
 
-combinationFoura = \markup \column {
+combinationFoura = \markup {
   \score {
     \combinationPiano 21 { \time 1/4 } "Melody + a2 "
     { \key d \major }
@@ -205,7 +205,7 @@ combinationFoura = \markup \column {
 }
 
 
-combinationFourb = \markup \column {
+combinationFourb = \markup {
   \score {
     \combinationPiano 24 { \time 1/4 } "Melody + a2 "
     { \key d \major }
@@ -230,7 +230,7 @@ combinationFourb = \markup \column {
 }
 
 
-combinationFourc = \markup \column {
+combinationFourc = \markup {
   \score {
     \combinationPiano 26 { \time 1/4 } "Melody + a2' "
     { \key d \major }
@@ -254,7 +254,7 @@ combinationFourc = \markup \column {
 }
 
 
-combinationFourd = \markup \column {
+combinationFourd = \markup {
   \score {
     \combinationPiano 53 { \time 3/4 } "Melody + a4' + a4'' "
     { \key g \major }
@@ -281,7 +281,7 @@ combinationFourd = \markup \column {
 }
 
 
-combinationFivea = \markup \column {
+combinationFivea = \markup {
   \score {
     \combinationPiano 17 { \time 1/4 } "Melody + a1' + Chord + a + Bass "
     { \key d \major }
@@ -299,7 +299,7 @@ combinationFivea = \markup \column {
 }
 
 
-combinationFiveb = \markup \column {
+combinationFiveb = \markup {
   \score {
     \combinationPiano 32 { \time 2/4 } "Melody + a1 + Chord + Bass "
     { \key g \major }
@@ -349,16 +349,14 @@ combinationFiveb = \markup \column {
   \header {
     piece = \markup { \bold \large "3-part Combinations" }
   }
-  \markup \center-column {
-    \column {
-      \combinationThreea
-      \vspace #1
-      \combinationThreeb
-      \vspace #1
-      \combinationThreec
-      \vspace #1
-      \combinationThreed
-    }
+  \markup \left-column {
+    \combinationThreea
+    \vspace #1
+    \combinationThreeb
+    \vspace #1
+    \combinationThreec
+    \vspace #1
+    \combinationThreed
   }
 }
 
@@ -368,22 +366,20 @@ combinationFiveb = \markup \column {
   \header {
     piece = \markup { \bold \large "4-part Combinations" }
   }
-  \markup \center-column {
-    \column {
-      \combinationFoura
-      \vspace #0.5
-      "Arpeggio in parallel octave."
-      \vspace #1
-      \combinationFourb
-      \vspace #0.5
-      "Layered with inversion."
-      \vspace #1
-      \combinationFourc
-      \vspace #0.5
-      "Scewed to switch or expand octaves."
-      \vspace #1
-      \combinationFourd
-    }
+  \markup \left-column {
+    \combinationFoura
+    \vspace #0.5
+    "Arpeggio in parallel octave."
+    \vspace #1
+    \combinationFourb
+    \vspace #0.5
+    "Layered with inversion."
+    \vspace #1
+    \combinationFourc
+    \vspace #0.5
+    "Scewed to switch or expand octaves."
+    \vspace #1
+    \combinationFourd
   }
 }
 
@@ -393,12 +389,10 @@ combinationFiveb = \markup \column {
   \header {
     piece = \markup { \bold \large "5-part Combinations" }
   }
-  \markup \center-column {
-    \column {
-      \combinationFivea
-      \vspace #1
-      \combinationFiveb
-    }
+  \markup \left-column {
+    \combinationFivea
+    \vspace #1
+    \combinationFiveb
   }
 }
 
