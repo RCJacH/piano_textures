@@ -253,7 +253,7 @@ combinationFoura = \markup {
           \repeat unfold 2 { <dis'' fis''> b' }
         }}
       } \\
-      { \autoBeamOff fis''' dis''' b'' }
+      { \autoBeamOff fis'''8 dis''' b'' }
     >>
     \voices 6, 2 <<
       {
