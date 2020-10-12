@@ -20,18 +20,18 @@
        (make-music
           'NoteGroupingEvent
           'span-direction (if isLast? 1 -1)
-          'tweaks (list 
+          'tweaks (list
              (cons (cons 'HorizontalBracketText 'text) group-name)
              (cons (cons 'HorizontalBracket 'color) black)
              (cons (cons 'HorizontalBracketText 'color) black)
                    )))
-      
+
      (map-some-music
        (lambda (mus)
          (ly:append-articulation-to-event! mus
            (note-grouping-event isLast?) #t))
         event))
-   
+
    (define (get-inner-event muslist isLast?)
      "Retrive very first or very last note of the group."
      (let*(
@@ -42,7 +42,7 @@
       (eqv? (ly:music-property event 'name) 'SequentialMusic)
         (get-inner-event elms isLast?)
         event)))
-   
+
    (let* (
         (muslist (list music))
         (first-event (get-inner-event muslist #f))
@@ -58,27 +58,23 @@ motif = #(define-music-function (parser layout group-name music) (string? ly:mus
 
 motifSingle =
 #(define-music-function
-  (parser location setting mark label voice notes)
+  (setting mark label voice notes)
   (ly:music? string? string? string? ly:music?)
   #{<<
-      \new Staff {
-        \set Staff.instrumentName = $mark
-        $setting
-        \new Voice = $voice $notes
-      }
+      \new Staff { \clipName #mark $setting \new Voice = $voice $notes }
       \new Dynamics { s1^$label }
     >>
   #})
 
+
 motifPiano =
 #(define-music-function
-  (parser location setting mark label voice top bottom)
+  (setting mark label voice top bottom)
   (ly:music? string? string? string? ly:music? ly:music?)
   #{<<
       \new PianoStaff {
-        \set PianoStaff.instrumentName = $mark
         <<
-          \new Staff = "top" {$setting \new Voice = $voice $top }
+          \new Staff = "top" { \clipName #mark $setting \new Voice = $voice $top }
           \new Staff = "bottom" { \clef bass  $bottom }
         >>
       }
@@ -86,9 +82,10 @@ motifPiano =
     >>
   #})
 
-motifMultiple = 
+
+motifMultiple =
 #(define-music-function
-  (parser location setting mark label voices notes1 notes2)
+  (setting mark label voices notes1 notes2)
   (ly:music? string? string? list ly:music? ly:music?)
   (let
    (
@@ -97,7 +94,7 @@ motifMultiple =
    )
   #{<<
       \new Staff {
-        \set Staff.instrumentName = $mark
+        \clipName $mark
         $setting
         <<
           \new Voice = $voice1 { \voiceOne $notes1 }
