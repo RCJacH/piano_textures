@@ -6,22 +6,26 @@ This repo is a collection of piano accompaniment textures found in classical or 
 
 ## WHAT IS IT GOOD FOR
 
-There are really very little textures that are involved in the pop, rock, or even jazz context in terms of piano playing.
-Most of the materials involves either block chords, arpeggios, chorale lines, rhythms, or chords + melody with occasional doublings.
-Thus incorporating other textures from time to time can be helpful to sustain interest.
+There is scarcity of piano textures in the pop, rock, or even jazz context.
+Most of the materials contains only block chords, arpeggios, riffs, and at most some chorale lines, thus incorporating other textures from time to time can be helpful to sustain interest.
 
-## HOW SHOULD I USE IT
+## WHAT IS INCLUDED
 
-The data is organized by genre, composer, opus - piece, then movement.
+The lilypond project and the rendered image is in the *data* folder of the source code, organized by genre, composer, opus - piece, then movement.
 Within each folder, there are three type of files:
 
 1. A .ly file which is the main project.
 2. A header.ily file containing information about the piece.
-3. Many image files which is the rendered result of the project, including *motives* and *combinations* of textures used in the movement.
+3. Many image files which is the rendered result of the project.
+
+However it's really a hassle opening every image one by one, a better way of previewing is to have a searchable and tagged database which lists all images in one place.
+But that takes a lot of time.
+So until I decide to make one, please use the [wiki](https://github.com/RCJacH/piano_textures/wiki) for now.
+I will make one page for every uploaded piece, including *motives* and *combinations* of textures used in the movement, explained below.
 
 ### MOTIVES
 
-Motives page lists a set of basic texture patterns used in the piece, transposed to a C major chord.
+Motives page lists a set of basic texture patterns used in the piece, transposed to C major.
 
 Example:
 
@@ -29,9 +33,9 @@ Example:
 
 Each motif is given a short name with three parts:
 
-1. Alphabet: The name of the super-category of the texture, in the case above is *Arpeggio*.
-2. Number: The main variation of the texture in concept.
-3. Apostrophes: The minor applied variation with the same concept. For example a1 is a 64th-note arpeggio with only C and G, and a1' differs by one note. Each variation may have different voicing, rhythm, or notes, but should share the core concept. For example a4 differs completely from a4' and a4'', but they are all based on the concept of arpeggio with multiple notes.
+1. **Alphabet**: The name of the super-category of the texture, in the case above is *Arpeggio*.
+2. **Number**: The main variation of the texture in concept.
+3. **Apostrophes**: The minor applied variation with the same concept. For example a1 is a 64th-note arpeggio with only C and G, and a1' differs by one note. Each variation may have different voicing, rhythm, or notes, but should share the core concept. For example a4 differs completely from a4' and a4'', but they are all based on the concept of arpeggio with multiple notes.
 
 ### COMBINATIONS
 
