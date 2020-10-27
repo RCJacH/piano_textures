@@ -4,58 +4,67 @@
 \include "header.ily"
 
 
-motifa = \markup \justify-line {
-  \column {
-    \score {
-      \motifSingle { \time 1/8 } "a " "Original" "6" { \repeat unfold 4 { c'64 e' }}
-      \scoreLayout
-    }
-    \vspace #1
-    \score {
-      \motifSingle { \time 1/8 } "a' " "Inversion" "6" { \repeat unfold 4 { e'64 c' }}
-      \scoreLayout
-    }
-  }
-  \column {
-    \score {
-      \motifSingle { \time 1/8 } "a1 " "Doubling on accent" "6" { \repeat unfold 4 { <c' e'>64 g' }}
-      \scoreLayout
-    }
-    \vspace #1
-    \score {
-      \motifSingle { \time 1/8 } "a1' " "Doubling on accent" "6" { \repeat unfold 4 { <e' g'>64 c' }}
-      \scoreLayout
-    }
-  }
-  \column {
-    \score {
-      \motifSingle { \time 1/8 } "a2 " "Doubling on syncropation" "6" { \repeat unfold 4 { c'64 <e' g'> }}
-      \scoreLayout
-    }
-    \vspace #1
-    \score {
-      \motifSingle { \time 1/8 } "a2' " "Doubling on syncropation" "6" { \repeat unfold 4 { g'64 <e' c'> }}
-      \scoreLayout
-    }
+motifA = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a " "Original" "6" { \repeat unfold 4 { c'64 e' }}
+    \scoreLayout
   }
 }
 
 
-motifaTwoHanded = \markup \justify-line {
-  \null
-  \column {
-    \score {
-      \motifPiano { \time 1/8 } "a'' " "Split voicing" "6" { \stemUp \repeat unfold 4 { \l <g c'>64 \u <e' g'> }} { s8 }
-      \scoreLayout
-    }
+motifB = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a' " "Inversion" "6" { \repeat unfold 4 { e'64 c' }}
+    \scoreLayout
   }
-  \column {
-    \score {
-      \motifPiano { \time 1/8 } "a1'' " "Identical voicing" "6" { \stemUp \repeat unfold 4 { \l <e g c'>64 \u <e' g' c''> }} { s8 }
-      \scoreLayout
-    }
+}
+
+
+motifC = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a1 " "Doubling on accent" "6" { \repeat unfold 4 { <c' e'>64 g' }}
+    \scoreLayout
   }
-  \null
+}
+
+
+motifD = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a1' " "Doubling on accent" "6" { \repeat unfold 4 { <e' g'>64 c' }}
+    \scoreLayout
+  }
+}
+
+
+motifE = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a2 " "Doubling on syncropation" "6" { \repeat unfold 4 { c'64 <e' g'> }}
+    \scoreLayout
+  }
+}
+
+
+motifF = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a2' " "Doubling on syncropation" "6" { \repeat unfold 4 { g'64 <e' c'> }}
+    \scoreLayout
+  }
+}
+
+
+motifG = \markup {
+  \score {
+    \motifPiano { \time 1/8 } "a'' " "Split voicing" "6" { \stemUp \repeat unfold 4 { \l <g c'>64 \u <e' g'> }} { s8 }
+    \scoreLayout
+  }
+}
+
+
+motifH = \markup {
+  \score {
+    \motifPiano { \time 1/8 } "a1'' " "Identical voicing" "6" { \stemUp \repeat unfold 4 { \l <e g c'>64 \u <e' g' c''> }} { s8 }
+    \scoreLayout
+  }
 }
 
 
@@ -65,27 +74,27 @@ motifbSetting = {
 }
 
 
-motifb = \markup \justify-line {
-  \null
-  \column {
-    \score {
-      \motifMultiple \motifbSetting "b " "Original" 5/2 { r16 <g e'> r <g e'> } { c,8 c, }
-      \scoreLayout
-    }
+motifI = \markup {
+  \score {
+    \motifMultiple \motifbSetting "b " "Original" 5/2 { r16 <g e'> r <g e'> } { c,8 c, }
+    \scoreLayout
   }
-  \column {
-    \score {
-      \motifMultiple \motifbSetting "b1 " "Thicker" 5/2 { \repeat unfold 2 { r16 <g e' g'> }} { c,8 c, }
-      \scoreLayout
-    }
+}
+
+
+motifJ = \markup {
+  \score {
+    \motifMultiple \motifbSetting "b1 " "Thicker" 5/2 { \repeat unfold 2 { r16 <g e' g'> }} { c,8 c, }
+    \scoreLayout
   }
-  \column {
-    \score {
-      \motifMultiple \motifbSetting "b2 " "Octaves" 5/2 { \repeat unfold 2 { r16 <g c' e'> }} { \repeat unfold 2 { <c, c>8 }}
-      \scoreLayout
-    }
+}
+
+
+motifK = \markup {
+  \score {
+    \motifMultiple \motifbSetting "b2 " "Octaves" 5/2 { \repeat unfold 2 { r16 <g c' e'> }} { \repeat unfold 2 { <c, c>8 }}
+    \scoreLayout
   }
-  \null
 }
 
 
@@ -372,15 +381,30 @@ combinationFourd = \markup {
   \markup \center-column {
     \large \bold "A. Tremolo"
     \vspace #1
-    \motifa
+    \justify-line {
+      \column { \motifA \vspace #1 \motifB }
+      \column { \motifC \vspace #1 \motifD }
+      \column { \motifE \vspace #1 \motifF }
+    }
     \vspace #2
     \bold "Two-Handed Tremolo"
     \vspace #1
-    \motifaTwoHanded
+    \justify-line {
+      \null
+      \column { \motifG }
+      \column { \motifH }
+      \null
+    }
     \vspace #3
     \large \bold "B. Stride"
     \vspace #1
-    \motifb
+    \justify-line {
+      \null
+      \column { \motifI }
+      \column { \motifJ }
+      \column { \motifK }
+      \null
+    }
   }
 }
 
@@ -459,6 +483,24 @@ combinationFourd = \markup {
     \vspace #0.5
     "Tremolo can also alternate between bass and octave with chord tones in between."
   }
+}
+
+
+\book {
+  \trimmedPaper
+  \bookOutputSuffix "motif"
+  \header {}
+  \bookpart { \motifA }
+  \bookpart { \motifB }
+  \bookpart { \motifC }
+  \bookpart { \motifD }
+  \bookpart { \motifE }
+  \bookpart { \motifF }
+  \bookpart { \motifG }
+  \bookpart { \motifH }
+  \bookpart { \motifI }
+  \bookpart { \motifJ }
+  \bookpart { \motifK }
 }
 
 

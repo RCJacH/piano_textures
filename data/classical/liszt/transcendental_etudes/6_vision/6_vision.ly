@@ -4,94 +4,95 @@
 \include "header.ily"
 
 
-motifOriginal = \markup \justify-line {
-  \column {
-    \score {
-      \motifSingle { \time 1/8} "a " "Original" "6" { \tuplet 6/4 { r32 e'32 c'' g'' c'' e' }}
-      \scoreLayout
-    }
-  }
-  \column {
-    \score {
-      \motifSingle { \time 1/8 } "a1 " "Double time with fifth" "6" { c'64 g' c'' g'' c''' g'' c'' g' }
-      \scoreLayout
-    }
-  }
-  \column {
-      \score {
-      \motifSingle { \time 1/8 } "a1' " "Double time with thirds" "6" { r64 g' e'' g'' e''' g'' e'' g' }
-      \scoreLayout
-    }
+motifA = \markup {
+  \score {
+    \motifSingle { \time 1/8} "a " "Original" "6" { \tuplet 6/4 { r32 e'32 c'' g'' c'' e' }}
+    \scoreLayout
   }
 }
 
-motifLonger = \markup \justify-line {
-  \null
-  \column {
-    \score {
-      \motifSingle { \time 1/4 } "a2 " "Quarter Arpeggio" "6" {
-        \tuplet 12/8 { e'32 g' c'' e'' g'' c''' e''' c''' g'' e'' c'' g' }
-      }
-      \scoreLayout
-    }
+
+motifB = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a1 " "Double time with fifth" "6" { c'64 g' c'' g'' c''' g'' c'' g' }
+        \scoreLayout
   }
-  \null
-  \column {
-    \score {
-      \motifSingle { \time 1/4 } "a2' " "Quarter Skewed" "6" \relative c'' {
-        \tuplet 9/8 { c32 [e g c g e c g e }  <c g' c>16]
-      }
-      \scoreLayout
-    }
-  }
-  \null
 }
 
-motifAccent = \markup \justify-line {
-  \null
-  \column {
-    \score {
-      \motifSingle { \time 1/4 } "a3 " "Accented Note" "6"
-      \relative c' {\tuplet 6/4 { r32 c e g c e } \tuplet 7/4 { c' e, c g e c g } }
-      \scoreLayout
-    }
+
+motifC = \markup {
+  \score {
+    \motifSingle { \time 1/8 } "a1' " "Double time with thirds" "6" { r64 g' e'' g'' e''' g'' e'' g' }
+    \scoreLayout
   }
-  \null
-  \column {
-    \score {
-      \motifMultiple { \time 1/4 } "a3' " "Chord Accent" 3/6
-      {r8 \tuplet 6/4 { g'''32 c''' g'' e'' c'' g' }}
-      {\tuplet 6/4 { g c' e' g' c'' e'' } <e''' g''>8 }
-      \scoreLayout
-    }
-  }
-  \null
 }
 
-motifChords = \markup \justify-line {
-  \column {
-    \score {
-      \motifSingle { \time 1/4 } "a4 " "Diads" "6" \relative c {
-        \tuplet 9/8 { e'32 g <c e> <e g> \ottava 1 <c' e> <e g> <c' e> <e, g> <c' e> }
-      }
-      \scoreLayout
+
+motifD = \markup {
+  \score {
+    \motifSingle { \time 1/4 } "a2 " "Quarter Arpeggio" "6" {
+      \tuplet 12/8 { e'32 g' c'' e'' g'' c''' e''' c''' g'' e'' c'' g' }
     }
+    \scoreLayout
   }
-  \column {
-    \score {
-      \motifSingle { \time 1/4 } "a4' " "Diad Octaves" "6" \relative c {
-        <c e c'>16 <c' e c'> <c' e c'> <c, e c'>
-      }
-      \scoreLayout
+}
+
+
+motifE = \markup {
+  \score {
+    \motifSingle { \time 1/4 } "a2' " "Quarter Skewed" "6" \relative c'' {
+      \tuplet 9/8 { c32 [e g c g e c g e }  <c g' c>16]
     }
+    \scoreLayout
   }
-  \column {
-    \score {
-      \motifSingle { \time 1/4 } "a4'' " "Triads" "6" \relative c' {
-        <c e g c>16 <c' e g c> <c' e g c> <c, e g c>
-      }
-      \scoreLayout
+}
+
+
+motifF = \markup {
+  \score {
+    \motifSingle { \time 1/4 } "a3 " "Accented Note" "6"
+    \relative c' {\tuplet 6/4 { r32 c e g c e } \tuplet 7/4 { c' e, c g e c g } }
+    \scoreLayout
+  }
+}
+
+
+motifG = \markup {
+  \score {
+    \motifMultiple { \time 1/4 } "a3' " "Chord Accent" 3/6
+    {r8 \tuplet 6/4 { g'''32 c''' g'' e'' c'' g' }}
+    {\tuplet 6/4 { g c' e' g' c'' e'' } <e''' g''>8 }
+    \scoreLayout
+  }
+}
+
+
+motifH = \markup {
+  \score {
+    \motifSingle { \time 1/4 } "a4 " "Diads" "6" \relative c {
+      \tuplet 9/8 { e'32 g <c e> <e g> \ottava 1 <c' e> <e g> <c' e> <e, g> <c' e> }
     }
+    \scoreLayout
+  }
+}
+
+
+motifI = \markup {
+  \score {
+    \motifSingle { \time 1/4 } "a4' " "Diad Octaves" "6" \relative c {
+      <c e c'>16 <c' e c'> <c' e c'> <c, e c'>
+    }
+    \scoreLayout
+  }
+}
+
+
+motifJ = \markup {
+  \score {
+    \motifSingle { \time 1/4 } "a4'' " "Triads" "6" \relative c' {
+      <c e g c>16 <c' e g c> <c' e g c> <c, e g c>
+    }
+    \scoreLayout
   }
 }
 
@@ -333,13 +334,33 @@ combinationFiveb = \markup {
   \markup \center-column {
     \large \bold "A. Open-voicing Arpeggio"
     \vspace #1
-    \motifOriginal
+    \justify-line {
+      \column { \motifA }
+      \column { \motifB }
+      \column { \motifC }
+    }
     \vspace #1
-    \motifLonger
+    \justify-line {
+      \null
+      \column { \motifD }
+      \null
+      \column { \motifE }
+      \null
+    }
     \vspace #1
-    \motifAccent
+    \justify-line {
+      \null
+      \column { \motifF }
+      \null
+      \column { \motifG }
+      \null
+    }
     \vspace #1
-    \motifChords
+    \justify-line {
+      \column { \motifH }
+      \column { \motifI }
+      \column { \motifJ }
+    }
   }
 }
 
@@ -394,6 +415,22 @@ combinationFiveb = \markup {
     \vspace #1
     \combinationFiveb
   }
+}
+
+
+\book {
+  \trimmedPaper
+  \bookOutputSuffix "motif"
+  \bookpart { \motifA }
+  \bookpart { \motifB }
+  \bookpart { \motifC }
+  \bookpart { \motifD }
+  \bookpart { \motifE }
+  \bookpart { \motifF }
+  \bookpart { \motifG }
+  \bookpart { \motifH }
+  \bookpart { \motifI }
+  \bookpart { \motifJ }
 }
 
 
