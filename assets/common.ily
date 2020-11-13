@@ -32,5 +32,24 @@
          #:hspace -2))))
 
 
+scoreWithLayout =
+#(define-scheme-function (music) (ly:music?)
+  #{ \score { $music \scoreLayout} #}
+)
+
+
+#(define-markup-command (scoreMarkup layout props music) (ly:music?)
+   (interpret-markup layout props
+    #{ \markup \score { $music \scoreLayout} #}
+   )
+ )
+
+
+scoremidi =
+#(define-scheme-function (music) (ly:music?)
+  #{ \score { $music \midi {} } #}
+)
+
+
 u = \change Staff = "top"
 l = \change Staff = "bottom"
