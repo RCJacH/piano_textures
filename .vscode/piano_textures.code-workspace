@@ -12,7 +12,7 @@
 				"type": "shell",
 				"group": "build",
 				// "command": "cd ${fileDirname}; C:/DAW/LilyPond/usr/bin/lilypond.exe -dbackend=eps -dno-gs-load-fonts -dinclude-eps-fonts -dresolution=300 -ddelete-intermediate-files=#t --png ${file}",
-				"command": "cd ${fileDirname}; C:/DAW/LilyPond/usr/bin/lilypond.exe -fpng -dresolution=150 ${file}; Get-ChildItem ${fileDirname} -Filter *.png | Foreach-Object { $filename = $_.FullName; imconvert $filename -trim -bordercolor White -border 32x32 $filename }",
+				"command": "cd ${fileDirname}; lilypond -fpng -dresolution=150 ${file}; Get-ChildItem ${fileDirname} -Filter *.png | Foreach-Object { $filename = $_.FullName; imconvert $filename -trim -bordercolor White -border 32x32 $filename }",
 				"problemMatcher": []
 			}
 		]
